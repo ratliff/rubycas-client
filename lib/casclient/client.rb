@@ -96,7 +96,7 @@ module CASClient
         dh.delete('ticket')
         duri.query = hash_to_query(dh)
         destination_url = duri.to_s.gsub(/\?$/, '')
-        h[cas_destination_logout_param_name] = destination_url if destination_url
+        h['service'] = destination_url if destination_url
         h['gateway'] = 'true'
       elsif follow_url
         h['url'] = follow_url if follow_url
